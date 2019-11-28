@@ -3,11 +3,13 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
+
 media_folder: 'static/uploads'
+
+frontmatter_delimiter: '["<!--", "-->"]'
+
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
-    format: md
-    frontmatter_delimiter: '["<!--", "-->"]'
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "content/blog" # The path to the folder where the documents are stored
     sort: "date:desc" # Default is title:asc
@@ -17,8 +19,6 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string", tagname: "h1", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: true}
   - name: "projects" # Used in routes, ie.: /admin/collections/:slug/edit
-    format: md
-    frontmatter_delimiter: '["<!--", "-->"]'
     label: "Projects" # Used in the UI, ie.: "New Project"
     folder: "content/projects" # The path to the folder where the documents are stored
     sort: "date:desc" # Default is title:asc
