@@ -6,8 +6,6 @@ backend:
 
 media_folder: 'static/uploads'
 
-frontmatter_delimiter: '["<!--", "-->"]'
-
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
@@ -17,5 +15,5 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: slug
     fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string", tagname: "h1", required: false}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1", required: false, frontmatter_delimiter: '["<!--", "-->"]'}
       - {label: "Body", name: "body", widget: "markdown", required: true}
